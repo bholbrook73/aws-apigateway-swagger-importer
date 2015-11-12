@@ -280,12 +280,14 @@ public class ApiGatewaySdkSwaggerApiImporter implements SwaggerApiImporter {
         LOG.info(format("Creating model for api id %s with name %s", api.getId(), modelName));
 
         createModel(api, modelName, model.getDescription(), generateSchema(model, modelName, definitions), modelContentType);
+        sleep();
     }
 
     private void createModel(RestApi api, String modelName, Property model, String modelContentType) {
         LOG.info(format("Creating model for api id %s with name %s", api.getId(), modelName));
 
         createModel(api, modelName, model.getDescription(), generateSchema(model, modelName, swagger.getDefinitions()), modelContentType);
+        sleep();
     }
 
     private void createMethods(final RestApi api, final Resource resource, Path path, List<String> apiProduces) {
